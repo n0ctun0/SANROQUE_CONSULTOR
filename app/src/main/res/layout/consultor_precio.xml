@@ -11,13 +11,12 @@
     <EditText
         android:id="@+id/edit_codigo_barra_manual"
         android:layout_width="351dp"
-        android:layout_height="78dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="152dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/btn_fondo_color4"
         android:ems="20"
         android:focusableInTouchMode="true"
-        android:hint="Codigo Producto"
+        android:hint="Código Manualmente"
         android:imeOptions="actionDone"
         android:inputType="number"
         android:maxLength="20"
@@ -26,28 +25,30 @@
         android:textCursorDrawable="@color/colorAccent"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_off" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="350dp"
-        android:layout_height="340dp"
+        android:layout_width="740dp"
+        android:layout_height="229dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logoreducido" />
+        app:srcCompat="@drawable/logocompleto" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="50dp"
         android:background="@drawable/btn_fondo_color2"
         android:fontFamily="sans-serif-condensed-light"
         android:gravity="center"
-        android:paddingEnd="20dp"
-        android:text="CONSULTE SU PRODUCTO AQUI"
+        android:text="CONSULTE SU PRODUCTO AQUÍ"
         android:textColor="@color/colorAccent"
         android:textSize="100dp"
         android:textStyle="bold"
@@ -65,7 +66,7 @@
         app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/edit_codigo_barra_manual"
         app:lottie_autoPlay="true"
         app:lottie_fileName="scan-barcode.json"
         app:lottie_loop="true" />
@@ -79,7 +80,7 @@
         app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/edit_codigo_barra_manual"
         app:lottie_autoPlay="true"
         app:lottie_fileName="loading3.json"
         app:lottie_loop="true" />
@@ -87,9 +88,8 @@
     <LinearLayout
         android:id="@+id/linear_precio"
         android:layout_width="1200dp"
-        android:layout_height="466dp"
+        android:layout_height="455dp"
         android:layout_margin="5dp"
-        android:layout_marginTop="50dp"
         android:animateLayoutChanges="true"
         android:background="@drawable/ic_tag_60x30_consultor_impreso"
         android:baselineAligned="false"
@@ -98,7 +98,7 @@
         app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5">
+        app:layout_constraintTop_toBottomOf="@+id/edit_codigo_barra_manual">
 
         <TextView
             android:id="@+id/txt_descripcion_1"
@@ -124,18 +124,19 @@
             android:textSize="60dp" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|end"
+            android:layout_gravity="right|center_vertical|end"
             android:layout_marginEnd="50dp"
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="sans-serif-condensed"
                 android:text="Precio:"
+                android:textAlignment="viewEnd"
                 android:textColor="@color/colorPrimary"
                 android:textSize="50dp"
                 android:textStyle="italic" />
@@ -143,7 +144,7 @@
             <TextView
                 android:id="@+id/txt_precio_producto"
                 style="@style/Widget.AppCompat.TextView.SpinnerItem"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-black"
                 android:padding="5dp"
@@ -177,7 +178,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Codigo de barra:"
+                android:text="Código de barra:"
                 android:textColor="@color/backgroundsr"
                 android:textSize="18sp"
                 android:textStyle="italic" />
@@ -198,7 +199,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Codigo producto:"
+                android:text="Código producto:"
                 android:textAlignment="viewEnd"
                 android:textColor="@color/backgroundsr"
                 android:textSize="18sp"
@@ -234,6 +235,7 @@
         android:layout_marginEnd="40dp"
         android:background="@drawable/btn_fondo_color3"
         android:text="On lector"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/btn_off"
         app:layout_constraintEnd_toStartOf="@+id/btn_off"
         app:layout_constraintTop_toTopOf="@+id/btn_off"
@@ -247,6 +249,7 @@
         android:layout_marginEnd="104dp"
         android:background="@drawable/btn_fondo_color2"
         android:text="Off lector"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

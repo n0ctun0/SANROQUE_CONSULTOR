@@ -85,7 +85,7 @@ public class ConsultorPrecioActivity extends AppCompatActivity {
     private boolean boleanlinearprecio = false;
 
     private OkHttpClient Pickinghttp;
-    private int sucursal = 2;
+    private String sucursal = "2";
     private String m_ip = "200.40.253.210";
     private Handler m_handler = new Handler(); // Main thread
     private Request RequestPicking;
@@ -130,6 +130,12 @@ public class ConsultorPrecioActivity extends AppCompatActivity {
         txtcodigoproducto = findViewById(R.id.txt_codigo_producto);
         txtcodigobarraproducto = findViewById(R.id.txt_codigo_barra_producto);
 
+        constrain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                hidebarras();
+            }
+        });
 
         btnon.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -171,7 +177,7 @@ public class ConsultorPrecioActivity extends AppCompatActivity {
 
         inventory();
         hidebarras();
-
+        cargardatospreference();
     }
 
     @Override
@@ -389,7 +395,7 @@ public class ConsultorPrecioActivity extends AppCompatActivity {
 
                                 mostrar_datos_view(a);
 
-                                DisplayPrintingStatusMessage(a.getDescArticulo_1().toString());
+                               // DisplayPrintingStatusMessage(a.getDescArticulo_1().toString());
 
                                 try {
                                     Thread.sleep(2000);
@@ -494,9 +500,25 @@ public class ConsultorPrecioActivity extends AppCompatActivity {
             boleananimationview = true;
             boleananimationbusqeudaview = false;
             boleanlinearprecio = false;
+
             Log.e("ENTRO H2","ENTRO1");
         }
     };
+
+    private void cargardatospreference() {
+        Bundle parametros = getIntent().getExtras();
+        if (parametros != null) {
+            sucursal = (parametros.getString("suc"));
+            m_ip = (parametros.getString("ip"));
+
+        } else {
+            sucursal = (parametros.getString("suc"));
+            m_ip = (parametros.getString("ip"));
+            Toast.makeText(getApplicationContext(), "No hay datos a mostrar", Toast.LENGTH_LONG).show();
+        }
+    }
+
+
 
     private void ocultando() {
         Log.e("ENTRO H","ENTRO1");
@@ -557,7 +579,7 @@ public class ConsultorPrecioActivity extends AppCompatActivity {
                         }
                         // showlinearprecio();
 
-                        DisplayPrintingStatusMessage("correcto");
+                       // DisplayPrintingStatusMessage("correcto");
 
                     } catch (Exception e) {
                         DisplayPrintingStatusMessage("No disponible");
