@@ -12,7 +12,7 @@
         android:id="@+id/edit_codigo_barra_manual"
         android:layout_width="351dp"
         android:layout_height="70dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/btn_fondo_color4"
         android:ems="20"
         android:focusableInTouchMode="true"
@@ -30,9 +30,9 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="740dp"
-        android:layout_height="229dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="485dp"
+        android:layout_height="149dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -42,15 +42,15 @@
         android:id="@+id/textView5"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginEnd="30dp"
         android:background="@drawable/btn_fondo_color2"
         android:fontFamily="sans-serif-condensed-light"
         android:gravity="center"
         android:text="CONSULTE SU PRODUCTO AQUÍ"
         android:textColor="@color/colorAccent"
-        android:textSize="100dp"
+        android:textSize="80dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.51"
@@ -59,7 +59,7 @@
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animation_view"
-        android:layout_width="1200dp"
+        android:layout_width="0dp"
         android:layout_height="500dp"
         android:animateLayoutChanges="true"
         android:visibility="visible"
@@ -73,7 +73,7 @@
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animationbusqueda_view"
-        android:layout_width="1200dp"
+        android:layout_width="0dp"
         android:layout_height="500dp"
         android:animateLayoutChanges="true"
         android:visibility="invisible"
@@ -87,9 +87,8 @@
 
     <LinearLayout
         android:id="@+id/linear_precio"
-        android:layout_width="1200dp"
-        android:layout_height="455dp"
-        android:layout_margin="5dp"
+        android:layout_width="900dp"
+        android:layout_height="320dp"
         android:animateLayoutChanges="true"
         android:background="@drawable/ic_tag_60x30_consultor_impreso"
         android:baselineAligned="false"
@@ -111,7 +110,7 @@
             android:text="Descripcion del producto a consultar"
             android:textAlignment="center"
             android:textColor="@color/backgroundsr"
-            android:textSize="60dp" />
+            android:textSize="40dp" />
 
         <TextView
             android:id="@+id/txt_descripcion_2"
@@ -121,13 +120,13 @@
             android:text="Descripcion 2"
             android:textAlignment="center"
             android:textColor="@color/black_overlay"
-            android:textSize="60dp" />
+            android:textSize="30dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="right|center_vertical|end"
-            android:layout_marginEnd="50dp"
+            android:layout_marginEnd="30dp"
             android:orientation="horizontal">
 
             <TextView
@@ -138,7 +137,7 @@
                 android:text="Precio:"
                 android:textAlignment="viewEnd"
                 android:textColor="@color/colorPrimary"
-                android:textSize="50dp"
+                android:textSize="30dp"
                 android:textStyle="italic" />
 
             <TextView
@@ -151,7 +150,7 @@
                 android:text="1000,00"
                 android:textAlignment="viewEnd"
                 android:textColor="@color/primaryDarkColor"
-                android:textSize="150dp" />
+                android:textSize="100dp" />
 
             <TextView
                 android:id="@+id/textView23"
@@ -163,14 +162,14 @@
                 android:fontFamily="sans-serif-condensed"
                 android:text="$"
                 android:textColor="@color/colorPrimary"
-                android:textSize="50dp" />
+                android:textSize="30dp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginEnd="50dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
             android:orientation="horizontal">
 
             <TextView
@@ -222,7 +221,7 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
-        android:layout_height="100dp"
+        android:layout_height="80dp"
         android:src="@drawable/banner"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

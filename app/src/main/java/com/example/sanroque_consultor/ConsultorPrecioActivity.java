@@ -161,19 +161,39 @@ public class ConsultorPrecioActivity extends AppCompatActivity {
         });
 
 
+        editcodigobarramanual.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int i, KeyEvent keyEvent) {
+                boolean procesado = false;
+
+                if (i == KeyEvent.KEYCODE_ENTER || i == KeyEvent.KEYCODE_TAB){
+                    presionarboton();
+                    procesado = true;
+                }
+
+
+
+                return procesado;
+            }
+        });
+
+
         editcodigobarramanual.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 boolean procesado = false;
 
-                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                if (actionId == EditorInfo.IME_ACTION_DONE || actionId == EditorInfo.IME_ACTION_NEXT) {
 
                     presionarboton();
                     procesado = true;
+
                 }
                 return procesado;
             }
         });
+
+
 
         inventory();
         hidebarras();
@@ -234,6 +254,8 @@ public class ConsultorPrecioActivity extends AppCompatActivity {
 
         inventory = DeviceManager.getInventory(this);
 
+
+
         if (!inventory.isEloSdkSupported()) {
             Toast.makeText(this, "Platform not recognized or supported, sorry", Toast.LENGTH_LONG).show();
         }
@@ -245,13 +267,16 @@ public class ConsultorPrecioActivity extends AppCompatActivity {
 
         if (apiAdapter == null) {
             Log.d("TAF", "Cannot find support for this platform");
+            Toast.makeText(this, "Cannot find support for this platform", Toast.LENGTH_LONG).show();
         }
 
         if (inventory.barCodeReaderEnableControl() == BcrEnableControl.FULL) {
+
             AsyncTask.execute(new Runnable() {
                 @Override
                 public void run() {
                     turnBcrOn();
+
                 }
             });
         }
@@ -304,6 +329,7 @@ public class ConsultorPrecioActivity extends AppCompatActivity {
         @Override
         public void onBarcodeRead(byte[] bytes) {
             String output;
+
             try {
                 output = new String(bytes, "US-ASCII");
             } catch (UnsupportedEncodingException e) {
@@ -314,6 +340,7 @@ public class ConsultorPrecioActivity extends AppCompatActivity {
                 @Override
                 public void run() {
                     request(outputCopy);
+
                     // txtbarcoderreader.setText(outputCopy);
                 }
             });
